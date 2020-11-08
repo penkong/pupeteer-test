@@ -1,0 +1,101 @@
+section 1 : setup 
+
+use puppeteer automation library 
+mocha is test runner
+chai is essential library
+
+
+config prettier
+
+
+
+section 2 
+
+launch and close 
+make test folder
+test file
+consume puppeteer
+describe
+
+
+puppeteer use async functions
+
+const browser = await puppeteer.launch({ headless: false});
+
+when we await if condition true test continue otherwise
+it through error and test crash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
