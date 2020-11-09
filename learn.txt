@@ -145,24 +145,51 @@ helpers.js
 
 e2e test :
 testing an application's workflow from beginning to end
+check code 
 
 
+------------------------------------------------
+
+section 4 : Visual Regression Testing + Percy;
+
+jest-image-snaphshots
+
+install dependecies
+create script in package.json
+create jest.config.js
+bail 0 say dont terminate test after one failed test 
+
+create Visual test file
+use toMatchImageSnapshot from jest- ...
+
+then 
+expect.extend({ toMatchImageSnapshot });
+means our image snaphshot lib is ready
+
+full page snaphshot 
+
+single element snaphshot
+
+responsive snaphshot 
+
+for dynamic content 
+we hide elements with puppeteer
+await page.evaluate(() =>
+  (document.querySelectorAll('h1') || []).forEach((el) => el.remove())
+);
+
+percy visual-regression tool
+get token for percy project 
+npm i @percy/puppeteer
+create percy.test.js
+create script
+write file
 
 
+-------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+Section 5 : jest-puppeteer
 
 
 
