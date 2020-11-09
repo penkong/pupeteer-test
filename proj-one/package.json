@@ -4,7 +4,8 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "./node_modules/mocha/bin/mocha --timeout=30000 ./test/example.test.js",
+		"test:example": "./node_modules/mocha/bin/mocha --timeout=30000 ./test/example.test.js",
+		"test:e2e": "./node_modules/mocha/bin/mocha --timeout=30000 ./test/e2e/*.test.js",
 		"test:device": "./node_modules/mocha/bin/mocha --timeout=30000 ./test/device.test.js"
 	},
 	"keywords": [],
@@ -16,6 +17,8 @@
 		"puppeteer": "^5.4.1"
 	},
 	"devDependencies": {
+		"@types/chai": "^4.2.14",
+		"@types/puppeteer": "^5.4.0",
 		"prettier": "^2.1.2"
 	}
 }

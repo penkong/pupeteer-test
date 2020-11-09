@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
-const { click, getText, getCount } = require('../lib/helpers');
+const { click, getText, getCount, shouldNotExist } = require('../lib/helpers');
 
 describe('first puppeteer test', () => {
 	let browser;
@@ -38,10 +38,8 @@ describe('first puppeteer test', () => {
 		const title = await page.title();
 		const url = await page.url();
 
-		// const text = await page.$eval('h1', el => el.textContent);
 		const text = await getText(page, 'h1');
 
-		// const countEl = await page.$$eval('p', el => el.length);
 		const countEl = await getCount(page, 'p');
 
 		expect(title).to.be.a('string', 'Example Domain');
@@ -51,15 +49,8 @@ describe('first puppeteer test', () => {
 
 		await page.goto('http://zero.webappsecurity.com/index.html');
 
-		// await page.waitForSelector('#signin_button');
-		// await page.click('#signin_button');
 		await click(page, '#signin_button');
-
-		await page.waitForFunction(() => !document.querySelector('#signin_button'));
-		await page.waitForSelector('#signin_button', {
-			hidden: true,
-			timeout: 30000,
-		});
+		await shouldNotExist(page, '#signin_button');
 	});
 });
 
@@ -82,3 +73,15 @@ describe('first puppeteer test', () => {
 
 // await page.type('#searchTerm', 'hello world');
 // await page.keyboard.press('Enter', { delay: 10 });
+
+// const text = await page.$eval('h1', el => el.textContent);
+// const countEl = await page.$$eval('p', el => el.length);
+
+// await page.waitForSelector('#signin_button');
+// await page.click('#signin_button');
+// await page.waitForFunction(() => !document.querySelector('#signin_button'));
+
+// await page.waitForSelector('#signin_button', {
+// 	hidden: true,
+// 	timeout: 30000,
+// });

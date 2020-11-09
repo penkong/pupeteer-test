@@ -141,9 +141,10 @@ extend puppeteer with custom command :
 create lib folder
 helpers.js
 
+--
 
-
-
+e2e test :
+testing an application's workflow from beginning to end
 
 
 
