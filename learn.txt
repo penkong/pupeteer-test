@@ -7,7 +7,7 @@ chai is essential library
 
 config prettier
 
-
+----------------------------------------
 
 section 2 
 
@@ -25,47 +25,121 @@ const browser = await puppeteer.launch({ headless: false});
 when we await if condition true test continue otherwise
 it through error and test crash
 
+check code for exec
+
+--
+
+launch options 
+headless,
+slowMo,
+devtools,
+
+also check type file
 
 
+Pausing the test
+await page.waitForTimeout(10000);
+
+reload 
+await page.reload();
 
 
+goBack() and goForward()
 
 
+--
+
+interaction with inputs : typing
+
+await page.type(selector, value, {delay: 200})
+await page.type('#developer-name', 'mkz', { delay: 200 });
 
 
+interaction with buttons and checkbox :
+await page.click('#tried-test-cafe', { clickCount: 1 });
 
 
+handle dropdown select box :
+	await page.select('#preferred-interface', 'option info');
+
+get page url and title :
+const title = await page.title();
+const url = await page.url();
+
+get text from element :
+there is not specific method for this 
+we use evaluate functions
+const text = await page.$eval('h1', el => el.textContent);
 
 
+hint : eval with $ return single element  but with $$ return multi
+
+get element count :
+const countEl = await page.$$eval('p', el => el.length);
 
 
+assertion :
+first pull out expect from chai.expect
+expect(title).to.be.a('string', 'Example Domain');
+expect(url).to.include('example.com');
+expect(text).to.be.a('string', 'Example Domain');
+expect(countEl).to.equal(2);
+
+set default timeout :
+await page.setDefaultTimeout(10000);
+await page.setDefaultNavigationTimeout(20000);
+
+simulate keyboard press :
+await page.keyboard.press('Enter', { delay: 10 });
 
 
+wait for Xpath :
+await page.waitForXPath('//h1');
 
 
+element not exists :
+in 2 way 
+await page.waitForFunction(
+  () => !document.querySelector('#signin_button')
+);
+
+it wait selector become hidden in website
+await page.waitForSelector('#signin_button', { 
+  hidden: true, timeout: 3000 
+});
+
+----------------------------------------------
+
+section 3 : advanced puppeteer;
+
+test hooks :
+
+in mocha 
+before one after one beforeEach , after each
+
+run once before all each it to start
+before(async () => {});
+
+before vs beforeEach
+run once , run before each it()
 
 
+Device Emulation :
+
+await page.setViewPort({ width: 1650, height: 1050 });
+or 
+const tablet = puppeteer.devices['iPad landscape'];
+await page.emulate(tablet);
 
 
+Use Cognito browser :
+const context = await browser.createIncognitoBrowserContext();
+page = await context.newPage();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+extend puppeteer with custom command :
+create lib folder
+helpers.js
 
 
 
