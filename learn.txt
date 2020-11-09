@@ -191,13 +191,22 @@ write file
 
 Section 5 : jest-puppeteer
 
+add jest jest-puppeteer puppeteer
+
+run this in terminal
+./node_modules/.bin/jest --init
+
+in jeset.config.js
+disable testEnvironment node
+preset: "jest-puppeteer",
+
+make babel.config.js
+do stuff
+
+make jest-puppeteer.config.js
+do default
+with this you dont need to launch browser or create instance of page
+set jest.setTimeout(larger number) becaue it normally designed for unit testing.
 
 
-
-
-
-
-
-
-
-
+this is framework
