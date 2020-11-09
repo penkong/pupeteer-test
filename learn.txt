@@ -210,3 +210,14 @@ set jest.setTimeout(larger number) becaue it normally designed for unit testing.
 
 
 this is framework
+
+------------------------------------------------
+
+section 6 : builder pattern test with mocha
+
+with usage mocha mocha-steps chai puppeteer
+
+what is mocha steps ??
+sequential steps on fail step not continue test.
+
+using js proxy ==> multi object to one
