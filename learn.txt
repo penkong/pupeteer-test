@@ -221,3 +221,46 @@ what is mocha steps ??
 sequential steps on fail step not continue test.
 
 using js proxy ==> multi object to one
+
+
+---------------------------------------------------
+
+Section 7 : bdd with cucumber and puppeteer
+
+cucumber reads executive specification written in plain text and 
+validate that software
+specification is consist of scenario
+with gherkin syntax 
+use for report also
+
+npm i
+puppeteer cucumber cucumber-html-reporter chai(is assertion library) 
+
+create scripts 
+test with cucumber with output json
+make report.js file
+generate script for report work
+
+"test": "cucumber-js -f json:cucumber_report.json",????? deprecated
+
+
+now make feature file plain english (gherkin) , they are flow
+and scenario , like open browser , user search , 
+each feature contain scenario;
+make support --> contain steps 
+make feature file
+with 
+feature name , description
+scenario 
+given 
+when 
+then 
+
+write gherkin syntax
+
+go to support 
+make steps.js
+
+write logic abstract for test
+
+make custom world.js file that cucumber know that
