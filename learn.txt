@@ -264,3 +264,46 @@ make steps.js
 write logic abstract for test
 
 make custom world.js file that cucumber know that
+
+
+
+--------------------------------------------------
+
+
+Section 8 : ci cd with puppeteer
+ci is the activity start the pipeline
+frequent release
+
+using jenkins - that need dedicated server
+
+do smoke test
+
+create script for e2e and smoke
+
+with smoke test we verify content loaded
+
+run server jenkins :
+java -jar jenkins.war -httpPort=8080 --enable-future-java
+
+only must connect to jenkins and make it
+
+-----------------------------------------
+
+tips and tricks
+
+full screen shot 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
